@@ -2,6 +2,7 @@ import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart';
 
 import 'features/splash/presentation/views/SplashView.dart';
 
@@ -15,6 +16,7 @@ class BooklyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
