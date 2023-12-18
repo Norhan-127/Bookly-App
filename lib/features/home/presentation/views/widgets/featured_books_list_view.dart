@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'custom_list_view_item.dart';
+import 'custom_book_image.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class FeaturedBooksListView extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const CustomListViewItem();
+          return const CustomBookImage();
         },
         separatorBuilder: (context, int index) {
           return Padding(
