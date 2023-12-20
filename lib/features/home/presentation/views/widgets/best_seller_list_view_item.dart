@@ -12,7 +12,7 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouters.kBookDetailsView);
       },
       child: Row(
@@ -42,7 +42,8 @@ class BestSellerListViewItem extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.6,
                   child: Text(
                     "Harry Potter and the Goblet of Fire",
-                    style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
                     maxLines: 2,
                   ),
                 ),
