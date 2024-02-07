@@ -31,7 +31,7 @@ class HomeViewBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Best Seller',
+                      'Newest Books',
                       style: Styles.textStyle18,
                     ),
                     SizedBox(
