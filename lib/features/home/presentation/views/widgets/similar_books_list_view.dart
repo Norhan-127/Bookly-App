@@ -1,30 +1,52 @@
+import 'package:bookly/core/widgets/custom_error_widget.dart';
+import 'package:bookly/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'custom_book_image.dart';
+
 class SimilarBooksListView extends StatelessWidget {
   const SimilarBooksListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.15,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5),
-            child: CustomBookImage(imageUrl: 'https://miro.medium.com/v2/resize:fit:2400/1*sHhtYhaCe2Uc3IU0IgKwIQ.png'),
-          );
-        },
-        separatorBuilder: (context, int index) {
-          return Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.01,
+    return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
+      builder: (context, state) {
+        if (state is SimilarBooksSuccessState) {
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * 0.15,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: CustomBookImage(
+                      imageUrl:
+                          'https://miro.medium.com/v2/resize:fit:2400/1*sHhtYhaCe2Uc3IU0IgKwIQ.png'),
+                );
+              },
+              separatorBuilder: (context, int index) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.01,
+                  ),
+                );
+              },
+              itemCount: 10,
             ),
           );
-        },
-        itemCount: 10,
-      ),
+        } else if (state is SimilarBooksFailureState) {
+          return CustomErrorWidget(errorMessage: state.message);
+        } else if (state is SimilarBooksLoadingState) {
+          return Center(
+            child: const CircularProgressIndicator(
+              color: Colors.amber,
+            ),
+          );
+        } else {
+          return const SizedBox();
+        }
+      },
     );
   }
 }
