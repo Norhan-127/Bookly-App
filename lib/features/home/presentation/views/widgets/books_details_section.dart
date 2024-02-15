@@ -5,7 +5,7 @@ import 'book_details_view_button.dart';
 import 'book_rating_row.dart';
 import 'custom_book_image.dart';
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({Key? key}) : super(key: key);
+  const BookDetailsSection({super.key});
 
   @override
   Widget build(BuildContext context) {

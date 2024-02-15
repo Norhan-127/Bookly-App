@@ -4,7 +4,6 @@ import 'package:bookly/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly/features/home/presentation/views/home_view.dart';
-import 'package:bookly/features/search/presentaion%20/views/search_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -14,7 +13,7 @@ abstract class AppRouters {
   static const kSplash = '/';
   static const kHomeView = '/homeView';
   static const kBookDetailsView = '/bookDetailsView';
-  static const kSearchView = '/kSearchView';
+  // static const kSearchView = '/kSearchView';
 
   static final GoRouter router = GoRouter(routes: [
     GoRoute(
@@ -34,9 +33,9 @@ abstract class AppRouters {
         child:  BookDetailsView(bookModel: state.extra as BookModel),
       ),
     ),
-    GoRoute(
-      path: kSearchView,
-      builder: (context, state) => const SearchView(),
-    ),
+    // GoRoute(
+    //   path: kSearchView,
+    //   builder: (context, state) => const SearchView(),
+    // ),
   ]);
 }

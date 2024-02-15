@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
 
+
 void main() {
   setupServiceLocator();
   runApp(const BooklyApp());
@@ -34,14 +35,22 @@ class BooklyApp extends StatelessWidget {
           create: (context) => NewestBooksCubit(
             getIt.get<HomeRepoImpl>(),
           )..fetchNewestBooks(),
-        )
+        ),
+
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
-            scaffoldBackgroundColor: kPrimaryColor,
-            textTheme:
-                GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
+          scaffoldBackgroundColor: kPrimaryColor,
+          textTheme:
+              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+          textSelectionTheme: TextSelectionThemeData(
+            selectionHandleColor: Colors.white.withOpacity(0.5),
+            // Change bubble to red
+            cursorColor: Colors.white,
+            selectionColor: Colors.white.withOpacity(0.5),
+          ),
+        ),
         routerConfig: AppRouters.router,
       ),
     );

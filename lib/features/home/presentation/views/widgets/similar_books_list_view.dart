@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'custom_book_image.dart';
 
 class SimilarBooksListView extends StatelessWidget {
-  const SimilarBooksListView({Key? key}) : super(key: key);
+  const SimilarBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +38,8 @@ class SimilarBooksListView extends StatelessWidget {
         } else if (state is SimilarBooksFailureState) {
           return CustomErrorWidget(errorMessage: state.message);
         } else if (state is SimilarBooksLoadingState) {
-          return Center(
-            child: const CircularProgressIndicator(
+          return const Center(
+            child: CircularProgressIndicator(
               color: Colors.amber,
             ),
           );

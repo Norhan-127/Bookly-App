@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 
 
 class SplashViewBody extends StatefulWidget {
-  const SplashViewBody({Key? key}) : super(key: key);
+  const SplashViewBody({super.key});
 
   @override
   State<SplashViewBody> createState() => _SplashViewBodyState();

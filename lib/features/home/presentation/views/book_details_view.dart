@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 class BookDetailsView extends StatefulWidget {
-  const BookDetailsView({Key? key, required this.bookModel}) : super(key: key);
+  const BookDetailsView({super.key, required this.bookModel});
   final BookModel bookModel;
 
   @override
@@ -23,9 +23,9 @@ class _BookDetailsViewState extends State<BookDetailsView> {
   }
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: BookDetailsAppBar() ,
-      body: BookDetailsViewBody(),
+    return  Scaffold(
+      appBar: const BookDetailsAppBar() ,
+      body: BookDetailsViewBody(bookModel: widget.bookModel,),
     );
   }
 }

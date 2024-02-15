@@ -8,8 +8,7 @@ import '../../../../../core/utils/styles.dart';
 import 'book_rating_row.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({Key? key, required this.bookModel})
-      : super(key: key);
+  const BestSellerListViewItem({super.key, required this.bookModel});
   final BookModel bookModel;
 
   @override
@@ -67,8 +66,8 @@ class BestSellerListViewItem extends StatelessWidget {
                       width: 20,
                     ),
                     BookRatingRow(
-                      rating: bookModel.volumeInfo?.ratingsCount ?? 0,
-                      count: bookModel.volumeInfo?.ratingsCount ?? 0,
+                      rating: bookModel.volumeInfo!.ratingsCount ?? 3,
+                      count: bookModel.volumeInfo!.ratingsCount ?? 4,
                     )
                   ],
                 )

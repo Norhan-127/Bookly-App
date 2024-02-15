@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
 class BookDetailsButton extends StatelessWidget {
-  const BookDetailsButton({Key? key}) : super(key: key);
+  const BookDetailsButton({super.key});
 
   @override
   Widget build(BuildContext context) {

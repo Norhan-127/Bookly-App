@@ -5,8 +5,7 @@ import '../../../../../core/utils/styles.dart';
 
 class BookRatingRow extends StatelessWidget {
   const BookRatingRow(
-      {Key? key, this.mainAxisAlignment = MainAxisAlignment.start, required this.count, required this.rating})
-      : super(key: key);
+      {super.key, this.mainAxisAlignment = MainAxisAlignment.start, required this.count, required this.rating});
   final MainAxisAlignment mainAxisAlignment;
   final num count;
   final num rating;

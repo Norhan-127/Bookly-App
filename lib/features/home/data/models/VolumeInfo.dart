@@ -53,8 +53,9 @@ class VolumeInfo extends Equatable {
   });
 
   VolumeInfo.fromJson(dynamic json) {
-    title = json['title'];
-    authors = json['authors'] != null ? json['authors'].cast<String>() : [];
+    title = json['title'] as String;
+    authors =
+        json['authors'] != null ? json['authors'].cast<String>() : <String>[];
     publisher = json['publisher'];
     publishedDate = json['publishedDate'];
     description = json['description'];
@@ -95,7 +96,7 @@ class VolumeInfo extends Equatable {
   String? description;
   List<IndustryIdentifiers>? industryIdentifiers;
   ReadingModes? readingModes;
-  num? pageCount;
+  int? pageCount;
   String? printType;
   List<String>? categories;
   num? averageRating;

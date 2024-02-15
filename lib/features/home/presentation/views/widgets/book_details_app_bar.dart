@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 
 class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const BookDetailsAppBar({Key? key}) : super(key: key);
+  const BookDetailsAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,8 @@ class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.07),
         child: IconButton(
-          onPressed: () {},
+          onPressed: () {
+          },
           icon: Icon(Icons.close,
               color: Colors.white,
               size: MediaQuery.of(context).size.width * 0.075),
