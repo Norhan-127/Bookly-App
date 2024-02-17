@@ -1,4 +1,4 @@
-import '../../../data/models/Book_model.dart';
+import '../../../../../core/models/book_models/Book_model.dart';
 
 abstract class NewestBooksState {
   const NewestBooksState();

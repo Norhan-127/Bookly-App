@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
-import '../../../data/models/Book_model.dart';
+import '../../../../../core/models/book_models/Book_model.dart';
 import 'book_details_view_button.dart';
 import 'book_rating_row.dart';
 import 'custom_book_image.dart';

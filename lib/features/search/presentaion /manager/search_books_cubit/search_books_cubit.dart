@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../../../home/data/models/Book_model.dart';
+import '../../../../../core/models/book_models/Book_model.dart';
 import '../../../data/repos/search_repo.dart';
 
 part 'search_books_state.dart';

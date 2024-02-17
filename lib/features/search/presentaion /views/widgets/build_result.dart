@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
+import '../../../../../core/utils/app_routers.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../core/widgets/custom_loading_indicator.dart';
@@ -12,6 +14,7 @@ class BuildResults extends StatefulWidget {
   const BuildResults({super.key, required this.query});
 
   final String query;
+
 
   @override
   State<BuildResults> createState() => _BuildResultsState();
@@ -40,7 +43,7 @@ class _BuildResultsState extends State<BuildResults> {
           return const CustomLoadingIndicator();
         } else if (state is SearchBooksSuccess) {
           print("SUCCESS STATE  ${state.books.length}");
-          if (state.books.isEmpty ) {
+          if (state.books.isEmpty) {
             return const Center(
               child: Text(
                 "No search results found",
@@ -48,7 +51,6 @@ class _BuildResultsState extends State<BuildResults> {
               ),
             );
           } else {
-
             return Padding(
               padding: const EdgeInsets.all(20),
               child: ListView.separated(
@@ -61,8 +63,8 @@ class _BuildResultsState extends State<BuildResults> {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.145,
                           child: CustomBookImage(
-                            imageUrl: book.volumeInfo?.imageLinks?.thumbnail ??
-                                "",
+                            imageUrl:
+                                book.volumeInfo?.imageLinks?.thumbnail ?? "",
                           ),
                         ),
                         const SizedBox(
@@ -73,10 +75,10 @@ class _BuildResultsState extends State<BuildResults> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.6,
+                                width:
+                                    MediaQuery.of(context).size.width * 0.6,
                                 child: Text(
-                                  book.volumeInfo?.title ??
-                                      "dddd",
+                                  book.volumeInfo?.title ?? "dddd",
                                   style: Styles.textStyle20
                                       .copyWith(fontFamily: kGtSectraFine),
                                   maxLines: 2,
@@ -86,8 +88,7 @@ class _BuildResultsState extends State<BuildResults> {
                                 height: 3,
                               ),
                               Text(
-                                book.volumeInfo?.authors?[0] ??
-                                    "?",
+                                book.volumeInfo?.authors?[0] ?? "?",
                                 style: Styles.textStyle14
                                     .copyWith(color: Colors.grey),
                               ),
@@ -101,8 +102,8 @@ class _BuildResultsState extends State<BuildResults> {
                                 children: [
                                   Text(
                                     'Free',
-                                    style: Styles.textStyle20
-                                        .copyWith(fontWeight: FontWeight.bold),
+                                    style: Styles.textStyle20.copyWith(
+                                        fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
                                     width: 20,

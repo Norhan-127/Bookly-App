@@ -43,20 +43,6 @@ class BookSearchView extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // return (query == "" || query == null)
-    //     ? const Center(
-    //         child: Text(
-    //         "No data",
-    //         style: Styles.textStyle16,
-    //       ))
-    //     : BlocProvider(
-    //         create: (context) => SearchBooksCubit(
-    //           SearchRepoImpl(
-    //             getIt.get<ApiService>(),
-    //           ),
-    //         )..fetchSearchedItem(query: query),
-    //         child: BuildResults(query: query),
-    //       );
     return const Center();
   }
 
