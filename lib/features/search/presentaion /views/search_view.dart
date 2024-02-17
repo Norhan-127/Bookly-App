@@ -57,7 +57,7 @@ class BookSearchView extends SearchDelegate {
     //         )..fetchSearchedItem(query: query),
     //         child: BuildResults(query: query),
     //       );
-    return Center();
+    return const Center();
   }
 
   @override
