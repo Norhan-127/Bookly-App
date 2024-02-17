@@ -13,7 +13,6 @@ class BestSellerListView extends StatelessWidget {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (BuildContext context, state) {
         if (state is NewestBooksSuccessState) {
-          print("first state success");
           return ListView.builder(
             itemBuilder: (context, index) {
               return Padding(
@@ -29,16 +28,14 @@ class BestSellerListView extends StatelessWidget {
             padding: EdgeInsets.zero,
           );
         } else if (state is NewestBooksFailureState) {
-          print("second state failure");
           return CustomErrorWidget(errorMessage: state.message);
-        } else if(state is NewestBooksLoadingState){
-          print("loading state ");
+        } else if (state is NewestBooksLoadingState) {
           return const Center(
             child: CircularProgressIndicator(
-              color: Colors.red,
+              color: Colors.white,
             ),
           );
-        }else {
+        } else {
           return const SizedBox();
         }
       },

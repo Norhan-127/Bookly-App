@@ -6,13 +6,14 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.backGroundColor,
     required this.text,
-    this.borderRadius, required this.textColor,
+    this.borderRadius, required this.textColor, required this.onTap,
   });
 
   final Color backGroundColor;
   final Color textColor;
   final String text;
   final BorderRadius? borderRadius;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class CustomButton extends StatelessWidget {
                   borderRadius: borderRadius ?? BorderRadius.circular(20)),
               backgroundColor: backGroundColor,
               ),
-          onPressed: () {},
+          onPressed: onTap,
           child: Text(
             text,
             style: Styles.textStyle18

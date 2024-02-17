@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
 
@@ -14,6 +15,8 @@ class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
             horizontal: MediaQuery.of(context).size.width * 0.07),
         child: IconButton(
           onPressed: () {
+            print("object");
+            GoRouter.of(context).pop();
           },
           icon: Icon(Icons.close,
               color: Colors.white,

@@ -4,7 +4,6 @@ import 'package:bookly/features/splash/presentation/views/widgets/sliding_text.d
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -26,8 +25,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   void dispose() {
-    super.dispose();
     animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -58,7 +57,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        GoRouter.of(context).push(AppRouters.kHomeView);
+        GoRouter.of(context).pushReplacement(AppRouters.kHomeView);
       },
     );
   }

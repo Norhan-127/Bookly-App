@@ -18,11 +18,11 @@ class SimilarBooksListView extends StatelessWidget {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                return  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: CustomBookImage(
                       imageUrl:
-                          'https://miro.medium.com/v2/resize:fit:2400/1*sHhtYhaCe2Uc3IU0IgKwIQ.png'),
+                          state.similarBooks[index].volumeInfo!.imageLinks?.thumbnail??""),
                 );
               },
               separatorBuilder: (context, int index) {

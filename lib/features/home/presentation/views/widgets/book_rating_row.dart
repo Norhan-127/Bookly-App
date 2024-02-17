@@ -23,8 +23,8 @@ class BookRatingRow extends StatelessWidget {
         const SizedBox(
           width: 6.3,
         ),
-        const Text(
-          '4.8',
+         Text(
+          "$count",
           style: Styles.textStyle16,
         ),
         const SizedBox(
@@ -32,7 +32,7 @@ class BookRatingRow extends StatelessWidget {
         ),
         Opacity(
           opacity: 0.5,
-          child: Text('(2390)',
+          child: Text("($rating)",
               style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600)),
         ),
         SizedBox(
